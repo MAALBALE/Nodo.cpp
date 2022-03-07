@@ -1,0 +1,81 @@
+//clase principal
+
+public class estructura {
+    
+    public static void main (String[]args){
+        
+        String persona1="ALejo";
+        String persona2="Jose";
+        String persona3="Valery";
+        String persona4="Arely";
+        
+        Nodo n1=new Nodo(persona1);
+        Nodo n2=new Nodo(persona2);
+        Nodo n3=new Nodo(persona3);
+        Nodo n4=new Nodo(persona4);
+        
+        
+        n1.setSiguiente(n2);
+        n2.setSiguiente(n3);
+        n3.setSiguiente(n4);
+        
+        
+            Nodo aux=n1;
+            
+            for (int i=0; i< 4; i++){
+                
+                String aux2 = (String)aux.getContiene();
+                System.out.println(aux2);
+                aux = aux.getSiguiente();
+                
+            }
+    }
+}
+
+
+
+//clase nodo
+
+public class Nodo {
+    private Nodo siguiente;
+    private String contiene;
+
+    public Nodo (){
+        setSiguiente(null);
+        setContiene(null);
+    }
+    
+    public Nodo (String c){
+        setSiguiente(null);
+        setContiene(c);
+    }
+    
+     public Nodo (String c, Nodo n){
+        setSiguiente(n);
+        setContiene(c);
+    }
+    
+    
+    public Nodo getSiguiente() {
+        return siguiente;
+    }
+
+   
+    public void setSiguiente(Nodo siguiente) {
+        this.siguiente = siguiente;
+    }
+
+    
+    public String getContiene() {
+        return contiene;
+    }
+
+    
+    public void setContiene(String contiene) {
+        this.contiene = contiene;
+    }
+    
+    
+    
+        
+}
